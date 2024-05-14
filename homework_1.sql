@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS student(
-	id INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY,
 	first_name VARCHAR(20) NOT NULL,
 	last_name VARCHAR(30) NOT NULL,
 	date_of_birth DATE NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS student(
 );
 
 CREATE TABLE IF NOT EXISTS teacher(
-	id INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY,
 	first_name VARCHAR(20) NOT NULL,
 	last_name VARCHAR(30) NOT NULL,
 	date_of_birth DATE NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS teacher(
 );
 
 CREATE TABLE IF NOT EXISTS grade_details(
-	id INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY,
 	grade_id INTEGER NOT NULL,
 	achivement_type_id INTEGER NOT NULL,
 	achivement_points INTEGER NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS grade_details(
 );
 
 CREATE TABLE IF NOT EXISTS course(
-	id INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY,
 	name VARCHAR(20) NOT NULL,
 	credit INTEGER NOT NULL,
 	academic_year INTEGER NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS course(
 );
 
 CREATE TABLE IF NOT EXISTS grade(
-	id INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY,
 	student_id INTEGER NOT NULL,
 	course_id INTEGER NOT NULL,
 	teacher_id INTEGER NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS grade(
 );
 
 CREATE TABLE IF NOT EXISTS achivement_type(
-	id INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY,
 	name VARCHAR(20) NOT NULL,
 	description TEXT,
 	participation_rate INTEGER NOT NULL
