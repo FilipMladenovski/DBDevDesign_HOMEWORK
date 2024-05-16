@@ -46,10 +46,9 @@ SELECT name FROM artist
 UNION ALL
 SELECT full_name FROM artist_details
 
-SELECT artist.name AS artist_name, artist_details.full_name
-FROM artist
-JOIN artist_details ON artist.id = artist_details.artist_id
-WHERE artist.name = artist_details.full_name;
+SELECT name from artist
+INTERSECT
+SELECT full_name FROM artist_details
 
 SELECT name,rating
 FROM album
